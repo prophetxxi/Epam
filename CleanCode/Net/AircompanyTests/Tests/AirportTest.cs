@@ -27,8 +27,6 @@ namespace AircompanyTests.Tests
            new MilitaryPlane("C-130 Hercules", 650, 5000, 110000, MilitaryType.TRANSPORT)
         };
 
-        private PassengerPlane planeWithMaxPassengerCapacity = new PassengerPlane("Boeing-747", 980, 16100, 70500, 242);
-
         private bool ThisTypeMilitaryPlaneIsHere(List<MilitaryPlane> militaryPlanes, MilitaryType type)
         {
             foreach (MilitaryPlane militaryPlane in militaryPlanes)
