@@ -1,14 +1,6 @@
-*.db
-*.log
-target/
 bin/
 /packages
 .vs/
 /vs
 /WebDriverLab/obj
 /WebDriverLab/bin
-*.rsuser
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
