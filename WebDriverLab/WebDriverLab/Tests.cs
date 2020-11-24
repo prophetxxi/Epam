@@ -32,7 +32,7 @@ namespace WebDriverLab
             IWebElement allPhonesListLink = driver.FindElement(By.LinkText("Все Смартфоны"));
             allPhonesListLink.Click();
 
-            IWebElement phoneMate30Pro = driver.FindElement(By.ClassName("product-item"));
+            IWebElement phoneMate30Pro = driver.FindElement(By.LinkText("Смартфон Huawei Mate 30 Pro LIO-L29 8GB/256GB (серебристый)"));
             phoneMate30Pro.Click();
 
             IWebElement addPhoneMate30Pro = driver.FindElement(By.CssSelector("button.empty-btn.new-cart"));
@@ -44,7 +44,7 @@ namespace WebDriverLab
             IWebElement tabletsListLink = driver.FindElement(By.LinkText("Все Планшеты"));
             tabletsListLink.Click();
 
-            IWebElement tabletMatePad = driver.FindElement(By.ClassName("product-item"));
+            IWebElement tabletMatePad = driver.FindElement(By.LinkText("Планшет Huawei MatePad 10.4 LTE 4GB/64GB (BAH3-L09) (полночный серый)"));
             tabletMatePad.Click();
 
             IWebElement addTabletMatePad = driver.FindElement(By.CssSelector("button.empty-btn.new-cart"));
@@ -61,7 +61,7 @@ namespace WebDriverLab
         [TearDown]
         public void TearDownTests()
         {
-            driver.Quit();
+            //driver.Quit();
         }
 
     }
