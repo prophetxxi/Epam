@@ -28,34 +28,36 @@ namespace WebDriverLab
         [Test]
         public void Testcase()
         {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(35));
+
             IWebElement phonesList = driver.FindElement(By.LinkText("Смартфоны"));
             phonesList.Click();
 
-            IWebElement allPhonesListLink = driver.FindElement(By.LinkText("Все Смартфоны"));
+            IWebElement allPhonesListLink = wait.Until(ExpectedConditions.ElementToBeClickable(By.LinkText("Все Смартфоны")));
             allPhonesListLink.Click();
 
-            IWebElement phoneMate30Pro = driver.FindElement(By.LinkText("Смартфон Huawei Mate 30 Pro LIO-L29 8GB/256GB (серебристый)"));
+            IWebElement phoneMate30Pro = wait.Until(ExpectedConditions.ElementToBeClickable(By.LinkText("Смартфон Huawei Mate 30 Pro LIO-L29 8GB/256GB (серебристый)")));
             phoneMate30Pro.Click();
 
-            IWebElement addPhoneMate30Pro = driver.FindElement(By.CssSelector("button.empty-btn.new-cart"));
+            IWebElement addPhoneMate30Pro = wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button.empty-btn.new-cart")));
             addPhoneMate30Pro.Click();
 
-            IWebElement tabletsList = driver.FindElement(By.LinkText("Планшеты"));
+            IWebElement tabletsList = wait.Until(ExpectedConditions.ElementToBeClickable(By.LinkText("Планшеты")));
             tabletsList.Click();
 
-            IWebElement tabletsListLink = driver.FindElement(By.LinkText("Все Планшеты"));
+            IWebElement tabletsListLink = wait.Until(ExpectedConditions.ElementToBeClickable(By.LinkText("Все Планшеты")));
             tabletsListLink.Click();
 
-            IWebElement tabletMatePad = driver.FindElement(By.LinkText("Планшет Huawei MatePad 10.4 LTE 4GB/64GB (BAH3-L09) (полночный серый)"));
+            IWebElement tabletMatePad = wait.Until(ExpectedConditions.ElementToBeClickable(By.LinkText("Планшет Huawei MatePad 10.4 LTE 4GB/64GB (BAH3-L09) (полночный серый)")));
             tabletMatePad.Click();
 
-            IWebElement addTabletMatePad = driver.FindElement(By.CssSelector("button.empty-btn.new-cart"));
+            IWebElement addTabletMatePad = wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button.empty-btn.new-cart")));
             addTabletMatePad.Click();
 
-            IWebElement orderBasketLink = driver.FindElement(By.ClassName("basket-icon"));
+            IWebElement orderBasketLink = wait.Until(ExpectedConditions.ElementToBeClickable(By.ClassName("basket-icon")));
             orderBasketLink.Click();
 
-            IWebElement isProductsInOrderBasket = driver.FindElement(By.Id("total_total"));
+            IWebElement isProductsInOrderBasket = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("total_total")));
             string testResult = isProductsInOrderBasket.Text;
 
             Assert.AreEqual(testResult, expectedTestResult);
