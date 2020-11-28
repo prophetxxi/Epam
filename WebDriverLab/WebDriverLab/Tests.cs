@@ -5,6 +5,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace WebDriverLab
     class Tests
     {
         IWebDriver driver;
+        string expectedTestResult = "Итого:\r\n3 098.00 BYN";
 
         [SetUp]
         public void SetupTests()
@@ -53,9 +55,10 @@ namespace WebDriverLab
             IWebElement orderBasketLink = driver.FindElement(By.ClassName("basket-icon"));
             orderBasketLink.Click();
 
-            IWebElement isProductsInOrderBasket = driver.FindElement(By.ClassName("order-info-block"));
+            IWebElement isProductsInOrderBasket = driver.FindElement(By.Id("total_total"));
+            string testResult = isProductsInOrderBasket.Text;
 
-            Assert.NotNull(isProductsInOrderBasket);
+            Assert.AreEqual(testResult, expectedTestResult);
         }
 
         [TearDown]
