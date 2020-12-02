@@ -15,7 +15,7 @@ namespace WebDriverLab
     class Tests
     {
         IWebDriver driver;
-        string expectedTestResult = "Итого:\r\n3 098.00 BYN";
+        string expectedTestResult = "Итого:\r\n3 198.00 BYN";
 
         [SetUp]
         public void SetupTests()
